@@ -1,0 +1,26 @@
+@SECRET=8d11daa0-abd1-430e-8c2c-002d84073f0e
+@CLIENT_ID=9b21f47d-a2f1-46f3-8771-746496a01041
+
+
+#pega token
+# @name pegaToken
+POST https://sts.itau.com.br/api/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&client_id={{CLIENT_ID}}&client_secret={{SECRET}}
+
+###
+@token={{pegaToken.response.body.access_token}}
+
+###
+# Pega lista PIX
+ GET https://secure.api.itau/pix_recebimentos/v2/pix?inicio=2024-11-20T00:00:00.000Z&fim=2024-11-28T00:00:00.000Z
+Authorization: Bearer {{token}}
+x-itau-apikey: {{CLIENT_ID}}
+
+
+####
+# Detalhe pix
+GET https://secure.api.itau/pix_recebimentos/v2/pix/E60701190202411222200DY5Z9L1DY5D
+Authorization: Bearer {{token}}
+x-itau-apikey: {{CLIENT_ID}}

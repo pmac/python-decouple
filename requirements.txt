@@ -1,0 +1,9 @@
+certifi==2023.7.22
+cffi==1.15.1
+charset-normalizer==3.2.0
+cryptography>=43.0.1
+idna==3.4
+pycparser==2.21
+pyOpenSSL>=24.2.1
+requests>=2.31.0
+urllib3==2.0.4

@@ -1,0 +1,3477 @@
+{
+	"info": {
+		"_postman_id": "471f85b1-e3b2-4d09-a63f-7566d048d0e0",
+		"name": "API - QRcode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15739169"
+	},
+	"item": [
+		{
+			"name": "Envio CSR e Atualização CRT",
+			"item": [
+				{
+					"name": "Envio de arquivo CSR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/plain",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ZjgwNTliMS0xZWJmLTQzNzUtODIxNC1iNDFhYjVmN2Y1MDEiLCJhdXQiOiIiLCJ2ZXIiOiJ2MS4wIiwiaXNzIjoiaHR0cHM6XC9cL29wZW5pZC5pdGF1LmNvbS5iclwvYXBpXC9vYXV0aFwvdG9rZW4iLCJBY2Nlc3NfVG9rZW4iOiJzTG93NG9PN2l5bUs3amI2bk1FTU5XR3JLcjVuWkZaUnMyck5mTkNjaWtwRTFEbGdycWFqMzgiLCJzb3VyY2UiOiJFWFQiLCJlbnYiOiJQIiwic2l0ZSI6ImN0bW0xIiwidXNyIjoibnVsbCIsIm1iaSI6InRydWUiLCJzY29wZSI6InJlc291cmNlLlJFQUQiLCJleHAiOjE1NzY2OTk2ODQsImlhdCI6MTU3NjYxMzI4NCwiZmxvdyI6IkNDIn0.qRRjzfeImc6Us0KrFCsn2aKIqgZH0eJhkAj6C8eKBX8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "-----BEGIN CERTIFICATE REQUEST-----\nMIICrTCCAZUCAQAwaDEtMCsGA1UEAwwkOWY4MDU5YjEtMWViZi00Mzc1LTgyMTQt\nYjQxYWI1ZjdmNTAxMQ0wCwYDVQQLDARET1VHMQ4wDAYDVQQHDAVTQU1QQTELMAkG\nA1UECAwCU1AxCzAJBgNVBAYTAkJSMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB\nCgKCAQEAuwFf/MQM2q7oPTiW4anhsnpPfc+2VnHF9/eQxyn492w35l4s0RpKGu3l\nD1smR8aXQAtRPptTg02/gQbHPRHXJXVYcCAgOTO4RN0zmTG14javzOoUtU4lzMM8\n7FbLmrXjgv37n+GCO8JaQwFW2ZzVDdBxKwOxa21FiJUxgWap2MM4Mw2qQnvo/OiB\nSCb9DfacKwATp4uNeKTpykvuko6BXDsUdK56hDroZhkEiZll2t6gYxi3mnPsXskl\nb5uZHgf5H4XwIH5mO1+W8vSwPa+f7MElb4vQLdEUX+fPF+dQsmO3XxnSr+85+fSw\nY961GLOxilV1MxUycxL00GO2o1WLDQIDAQABoAAwDQYJKoZIhvcNAQENBQADggEB\nAGLR/vHHBmgpuF4kxOSxhu2mOZn4N1rLIBdXTvt4EOQ+9MJB0pTJPBpkbqXUR0ih\nC6yYknut1UnMzbmjAO4A4L4pCGd7fP40zQ74MCO7b8SPFMOefvNzWcFqc4HZRnkD\nxWZmLzy3QYT9KEysuIJxRLcffsJckfp1yltiQji17PbYFNuNdWqEwUmoYC6rX66Z\nkZ1V8GPd5ArqCy3Vv0MoItgERWOlRbBC30K9lGTLWb4/ki87h94Xyf77w1SMM2bW\nEotEtqVWHNZoWhikCuI3Vh6wiYZXzEzN8imIZCHBg5Z61+TyIfvFwxSC+9OwpIKI\nvFteQFnhXAZpwvbzLHPRjw8=\n-----END CERTIFICATE REQUEST-----"
+						},
+						"url": "https://sts.itau.com.br/seguranca/v1/certificado/solicitacao"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Obtenção Access Token",
+			"item": [
+				{
+					"name": "Obtenção do access_token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "x-itau-flowID",
+								"type": "text",
+								"value": "1"
+							},
+							{
+								"key": "x-itau-correlationID",
+								"type": "text",
+								"value": "2"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{CLIENT_ID}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{SECRET}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://sts.itau.com.br/api/oauth/token"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Emissão de QrCode",
+			"item": [
+				{
+					"name": "QRcode Cob c/ TXID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{access_token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-correlationID",
+								"type": "text",
+								"value": "{{$guid}}"
+							},
+							{
+								"key": "x-simulation",
+								"type": "text",
+								"value": "false"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"calendario\": {\r\n        \"expiracao\": \"3600\"\r\n    },\r\n    \"devedor\": {\r\n        \"cnpj\": \"12345678000195\",\r\n        \"nome\": \"Empresa de Serviços SA\"\r\n    },\r\n    \"valor\": {\r\n        \"original\": \"123.45\"\r\n    },\r\n    \"chave\": \"60701190000104\",\r\n    \"solicitacaoPagador\": \"Informar cartão fidelidade\",\r\n    \"infoAdicionais\": [\r\n        {\r\n            \"nome\": \"Campo 1\",\r\n            \"valor\": \"Informação Adicional1\"\r\n        },\r\n        {\r\n            \"nome\": \"Campo 2\",\r\n            \"valor\": \"Informação Adicional2 \"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://secure.api.itau/pix_recebimentos/v2/cob/TXID"
+					},
+					"response": []
+				},
+				{
+					"name": "Emissão do QrCode Cob",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ZjgwNTliMS0xZWJmLTQzNzUtODIxNC1iNDFhYjVmN2Y1MDEiLCJhdXQiOiIiLCJ2ZXIiOiJ2MS4wIiwiaXNzIjoiaHR0cHM6XC9cL29wZW5pZC5pdGF1LmNvbS5iclwvYXBpXC9vYXV0aFwvdG9rZW4iLCJBY2Nlc3NfVG9rZW4iOiJodU4xQ3VxTDdCTzZTNHh6NlRZWDVPell2ZnBLN2s5VDhkek1QOEdxZ3hCYjdQc1BTODJCOXUiLCJzb3VyY2UiOiJFWFQiLCJlbnYiOiJQIiwic2l0ZSI6ImN0bW0xIiwidXNyIjoibnVsbCIsIm1iaSI6InRydWUiLCJzY29wZSI6InJlc291cmNlLlJFQUQiLCJleHAiOjE1NzY3NTg1NjYsImlhdCI6MTU3Njc1ODI2NiwiZmxvdyI6IkNDIn0.RhL4wlCXmLN_fLUrCrrTAQm58hl1wBiby31AQQFUQ1I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-apikey",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-correlationID",
+								"value": "a1e64241-7fdb-4d05-a7f6-c44febcdd8d9",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-flowID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"valor\": {\r\n    \"original\": \"123.45\"\r\n  },\r\n  \"chave\": \"60701190000104\"\r\n}"
+						},
+						"url": "https://secure.api.itau/pix_recebimentos/v2/cob"
+					},
+					"response": []
+				},
+				{
+					"name": "ConsultaCOB",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ZjgwNTliMS0xZWJmLTQzNzUtODIxNC1iNDFhYjVmN2Y1MDEiLCJhdXQiOiIiLCJ2ZXIiOiJ2MS4wIiwiaXNzIjoiaHR0cHM6XC9cL29wZW5pZC5pdGF1LmNvbS5iclwvYXBpXC9vYXV0aFwvdG9rZW4iLCJBY2Nlc3NfVG9rZW4iOiJodU4xQ3VxTDdCTzZTNHh6NlRZWDVPell2ZnBLN2s5VDhkek1QOEdxZ3hCYjdQc1BTODJCOXUiLCJzb3VyY2UiOiJFWFQiLCJlbnYiOiJQIiwic2l0ZSI6ImN0bW0xIiwidXNyIjoibnVsbCIsIm1iaSI6InRydWUiLCJzY29wZSI6InJlc291cmNlLlJFQUQiLCJleHAiOjE1NzY3NTg1NjYsImlhdCI6MTU3Njc1ODI2NiwiZmxvdyI6IkNDIn0.RhL4wlCXmLN_fLUrCrrTAQm58hl1wBiby31AQQFUQ1I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-apikey",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-correlationID",
+								"value": "a1e64241-7fdb-4d05-a7f6-c44febcdd8d9",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-flowID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://secure.api.itau/pix_recebimentos/v1/cob?inicio=2020-04-01T00:00:00Z&fim=2020-04-02T10:00:00Z",
+							"protocol": "https",
+							"host": [
+								"secure",
+								"api",
+								"itau"
+							],
+							"path": [
+								"pix_recebimentos",
+								"v1",
+								"cob"
+							],
+							"query": [
+								{
+									"key": "inicio",
+									"value": "2020-04-01T00:00:00Z"
+								},
+								{
+									"key": "fim",
+									"value": "2020-04-02T10:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta COB - TIXD",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ZjgwNTliMS0xZWJmLTQzNzUtODIxNC1iNDFhYjVmN2Y1MDEiLCJhdXQiOiIiLCJ2ZXIiOiJ2MS4wIiwiaXNzIjoiaHR0cHM6XC9cL29wZW5pZC5pdGF1LmNvbS5iclwvYXBpXC9vYXV0aFwvdG9rZW4iLCJBY2Nlc3NfVG9rZW4iOiJodU4xQ3VxTDdCTzZTNHh6NlRZWDVPell2ZnBLN2s5VDhkek1QOEdxZ3hCYjdQc1BTODJCOXUiLCJzb3VyY2UiOiJFWFQiLCJlbnYiOiJQIiwic2l0ZSI6ImN0bW0xIiwidXNyIjoibnVsbCIsIm1iaSI6InRydWUiLCJzY29wZSI6InJlc291cmNlLlJFQUQiLCJleHAiOjE1NzY3NTg1NjYsImlhdCI6MTU3Njc1ODI2NiwiZmxvdyI6IkNDIn0.RhL4wlCXmLN_fLUrCrrTAQm58hl1wBiby31AQQFUQ1I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-apikey",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-correlationID",
+								"value": "a1e64241-7fdb-4d05-a7f6-c44febcdd8d9",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-flowID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": "https://secure.api.itau/pix_recebimentos/v2/cob/TXID"
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta COB - Base 64",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ZjgwNTliMS0xZWJmLTQzNzUtODIxNC1iNDFhYjVmN2Y1MDEiLCJhdXQiOiIiLCJ2ZXIiOiJ2MS4wIiwiaXNzIjoiaHR0cHM6XC9cL29wZW5pZC5pdGF1LmNvbS5iclwvYXBpXC9vYXV0aFwvdG9rZW4iLCJBY2Nlc3NfVG9rZW4iOiJodU4xQ3VxTDdCTzZTNHh6NlRZWDVPell2ZnBLN2s5VDhkek1QOEdxZ3hCYjdQc1BTODJCOXUiLCJzb3VyY2UiOiJFWFQiLCJlbnYiOiJQIiwic2l0ZSI6ImN0bW0xIiwidXNyIjoibnVsbCIsIm1iaSI6InRydWUiLCJzY29wZSI6InJlc291cmNlLlJFQUQiLCJleHAiOjE1NzY3NTg1NjYsImlhdCI6MTU3Njc1ODI2NiwiZmxvdyI6IkNDIn0.RhL4wlCXmLN_fLUrCrrTAQm58hl1wBiby31AQQFUQ1I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-apikey",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-correlationID",
+								"value": "a1e64241-7fdb-4d05-a7f6-c44febcdd8d9",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-flowID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": "https://secure.api.itau/pix_recebimentos/v2/cob/TXID/qrcode"
+					},
+					"response": []
+				},
+				{
+					"name": "Emissão do COBV Com TXID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ZjgwNTliMS0xZWJmLTQzNzUtODIxNC1iNDFhYjVmN2Y1MDEiLCJhdXQiOiIiLCJ2ZXIiOiJ2MS4wIiwiaXNzIjoiaHR0cHM6XC9cL29wZW5pZC5pdGF1LmNvbS5iclwvYXBpXC9vYXV0aFwvdG9rZW4iLCJBY2Nlc3NfVG9rZW4iOiJodU4xQ3VxTDdCTzZTNHh6NlRZWDVPell2ZnBLN2s5VDhkek1QOEdxZ3hCYjdQc1BTODJCOXUiLCJzb3VyY2UiOiJFWFQiLCJlbnYiOiJQIiwic2l0ZSI6ImN0bW0xIiwidXNyIjoibnVsbCIsIm1iaSI6InRydWUiLCJzY29wZSI6InJlc291cmNlLlJFQUQiLCJleHAiOjE1NzY3NTg1NjYsImlhdCI6MTU3Njc1ODI2NiwiZmxvdyI6IkNDIn0.RhL4wlCXmLN_fLUrCrrTAQm58hl1wBiby31AQQFUQ1I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-apikey",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-correlationID",
+								"value": "a1e64241-7fdb-4d05-a7f6-c44febcdd8d9",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-flowID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"calendario\": {\r\n     //   \"expiracao\": \"3600\",\r\n        \"dataDeVencimento\": \"2023-12-31\"\r\n    },\r\n    \"devedor\": {\r\n      //  \"cnpj\": \"12345678000195\",\r\n        \"cpf\": \"12345678909\",\r\n        \"nome\": \"Empresa de Serviços SA\"\r\n    },\r\n    \"valor\": {\r\n        \"original\": \"1.00\"\r\n    },\r\n    \"chave\": \"Chave PIX recebedor\",\r\n    \"solicitacaoPagador\": \"Informar cartão fidelidade\",\r\n    \"infoAdicionais\": [\r\n        {\r\n            \"nome\": \"Campo 1\",\r\n            \"valor\": \"Informação Adicional1\"\r\n        },\r\n        {\r\n            \"nome\": \"Campo 2\",\r\n            \"valor\": \"Informação Adicional2 \"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": "https://secure.api.itau/pix_recebimentos/v2/cobv/txid"
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta COBV",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ZjgwNTliMS0xZWJmLTQzNzUtODIxNC1iNDFhYjVmN2Y1MDEiLCJhdXQiOiIiLCJ2ZXIiOiJ2MS4wIiwiaXNzIjoiaHR0cHM6XC9cL29wZW5pZC5pdGF1LmNvbS5iclwvYXBpXC9vYXV0aFwvdG9rZW4iLCJBY2Nlc3NfVG9rZW4iOiJodU4xQ3VxTDdCTzZTNHh6NlRZWDVPell2ZnBLN2s5VDhkek1QOEdxZ3hCYjdQc1BTODJCOXUiLCJzb3VyY2UiOiJFWFQiLCJlbnYiOiJQIiwic2l0ZSI6ImN0bW0xIiwidXNyIjoibnVsbCIsIm1iaSI6InRydWUiLCJzY29wZSI6InJlc291cmNlLlJFQUQiLCJleHAiOjE1NzY3NTg1NjYsImlhdCI6MTU3Njc1ODI2NiwiZmxvdyI6IkNDIn0.RhL4wlCXmLN_fLUrCrrTAQm58hl1wBiby31AQQFUQ1I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-apikey",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-correlationID",
+								"value": "a1e64241-7fdb-4d05-a7f6-c44febcdd8d9",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-flowID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://secure.api.itau/pix_recebimentos/v2/cobv?inicio=2020-04-01T00:00:00Z&fim=2020-04-02T10:00:00Z",
+							"protocol": "https",
+							"host": [
+								"secure",
+								"api",
+								"itau"
+							],
+							"path": [
+								"pix_recebimentos",
+								"v2",
+								"cobv"
+							],
+							"query": [
+								{
+									"key": "inicio",
+									"value": "2020-04-01T00:00:00Z"
+								},
+								{
+									"key": "fim",
+									"value": "2020-04-02T10:00:00Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta COBV - Base 64 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5ZjgwNTliMS0xZWJmLTQzNzUtODIxNC1iNDFhYjVmN2Y1MDEiLCJhdXQiOiIiLCJ2ZXIiOiJ2MS4wIiwiaXNzIjoiaHR0cHM6XC9cL29wZW5pZC5pdGF1LmNvbS5iclwvYXBpXC9vYXV0aFwvdG9rZW4iLCJBY2Nlc3NfVG9rZW4iOiJodU4xQ3VxTDdCTzZTNHh6NlRZWDVPell2ZnBLN2s5VDhkek1QOEdxZ3hCYjdQc1BTODJCOXUiLCJzb3VyY2UiOiJFWFQiLCJlbnYiOiJQIiwic2l0ZSI6ImN0bW0xIiwidXNyIjoibnVsbCIsIm1iaSI6InRydWUiLCJzY29wZSI6InJlc291cmNlLlJFQUQiLCJleHAiOjE1NzY3NTg1NjYsImlhdCI6MTU3Njc1ODI2NiwiZmxvdyI6IkNDIn0.RhL4wlCXmLN_fLUrCrrTAQm58hl1wBiby31AQQFUQ1I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-apikey",
+								"value": "{{CLIENT_ID}}",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-correlationID",
+								"value": "a1e64241-7fdb-4d05-a7f6-c44febcdd8d9",
+								"type": "text"
+							},
+							{
+								"key": "x-itau-flowID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": "https://secure.api.itau/pix_recebimentos/v2/cobv/TXID/qrcode"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "webhook",
+			"item": [
+				{
+					"name": "{chave} informações adicionais",
+					"item": [
+						{
+							"name": "put/webhook/{chave}",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": {
+										"username": "<Basic Auth Username>",
+										"password": "<Basic Auth Password>"
+									}
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://secure.api.itau/pix_recebimentos/v2/webhook/{chave}",
+								"description": "Operação responsável por cadastrar webhook para aviso de recebimentos pix por chave"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Location",
+											"value": "aute proi",
+											"description": "URI correspondente ao item atualziado."
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Se não exsitir o recurso, neste caso, o recurso foi criado.\n",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Location",
+											"value": "aute proi",
+											"description": "URI correspondente ao item criado."
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "A execução foi bem-sucedida, o recurso é atualizado / criado de acordo com as mudanças enviadas de forma assíncrona.\nO retorno deverá ser um recurso de taferas.\n",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Accepted",
+									"code": 202,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Location",
+											"value": "aute proi",
+											"description": "URI correspondente a consulta do status do processamento assíncrono."
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Solicitação processada com sucesso, mas não está retornando nenhum conteúdo.\n",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Location",
+											"value": "aute proi",
+											"description": "URI correspondente ao elemento atualizado."
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Requisição com formato inválido.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/CobOperacaoInvalida\",\n  \"title\": \"Cobrança inválida.\",\n  \"status\": 400,\n  \"detail\": \"A requisição que busca alterar ou criar uma cobrança para pagamento imediato não respeita o schema ou está semanticamente errada.\",\n  \"correlationId\": \"0756d096-c900-4d4b-a0b1-d9c13004f29d\",\n  \"violacoes\": [\n    {\n      \"razao\": \"O objeto cobv.devedor não respeita o schema.\",\n      \"propriedade\": \"cob.valor.original\",\n      \"valor\": \"tempor\"\n    },\n    {\n      \"razao\": \"O objeto cobv.devedor não respeita o schema.\",\n      \"propriedade\": \"cob.valor.original\",\n      \"valor\": \"sed deserunt dolore\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Não autorizado. Verifique se os parâmetros de acesso estão válidos (certificado, expiração do token, configuração da credencial, secret ou jwt). Se o problema persistir, entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Requisição de participante autenticado que viola alguma regra de autorização.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/AcessoNegado\",\n  \"title\": \"Acesso Negado\",\n  \"status\": 403,\n  \"detail\": \"Requisição de participante autenticado que viola alguma regra de autorização.\",\n  \"correlationId\": \"0756d096-c900-4d4b-a0b1-d9c13004f29d\",\n  \"violacoes\": [\n    {\n      \"razao\": \"incididunt qui quis\",\n      \"propriedade\": \"Ut ad culpa aute\",\n      \"valor\": \"ex fugiat do magna Duis\"\n    },\n    {\n      \"razao\": \"eiusmod\",\n      \"propriedade\": \"commodo nulla dolore i\",\n      \"valor\": \"id pariatur nulla\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Recurso solicitado não foi encontrado.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/NaoEncontrado\",\n  \"title\": \"Não Encontrado\",\n  \"status\": 404,\n  \"detail\": \"Entidade não encontrada.\",\n  \"correlationId\": \"0756d096-c900-4d4b-a0b1-d9c13004f29d\",\n  \"violacoes\": [\n    {\n      \"razao\": \"irure sit ullamco id r\",\n      \"propriedade\": \"ullamco eu laborum tempor\",\n      \"valor\": \"eiusmod eu Excepteur\"\n    },\n    {\n      \"razao\": \"cupidatat in exercitation tempor\",\n      \"propriedade\": \"deserunt Lorem nostrud\",\n      \"valor\": \"in laboris nisi dolore\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Método não permitido",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Erro semântico",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Solicitação requer pré requisito ou condição que não foi enviada",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Precondition Required",
+									"code": 428,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Erro Inesperado. Entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Não implementado. Entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Not Implemented",
+									"code": 501,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Serviço não está disponível no momento. Serviço solicitado pode estar em manutenção ou fora da janela de funcionamento.",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"webhookUrl\": \"https://pix.example.com/api/webhook/\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/ServicoIndisponivel\",\n  \"title\": \"Serviço Indisponível\",\n  \"status\": 503,\n  \"detail\": \"Serviço não está disponível no momento. Serviço solicitado pode estar em manutenção ou fora da janela de funcionamento.\",\n  \"correlationId\": \"A cobrança em questão não foi encontrada para a location requisitada.\",\n  \"violacoes\": [\n    {\n      \"razao\": \"consequat amet\",\n      \"propriedade\": \"elit ip\",\n      \"valor\": \"in voluptate\"\n    },\n    {\n      \"razao\": \"ut e\",\n      \"propriedade\": \"sint qui dolor minim Duis\",\n      \"valor\": \"proident incididunt nisi\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get/webhook/{chave}",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": {
+										"username": "<Basic Auth Username>",
+										"password": "<Basic Auth Password>"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "https://secure.api.itau/pix_recebimentos/v2/webhook/{chave}",
+								"description": "Operação responsável por resgatar webhook de aviso de recebimentos pix por chave"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Location",
+											"value": "aute proi",
+											"description": "URI correspondente a pesquisa corrente"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"value\": {\n    \"webhookUrl\": \"https://pix.example.com/api/webhook/\",\n    \"chave\": \"40a0932d-1918-4eee-845d-35a2da1690dc\",\n    \"criacao\": \"2020-11-11T10:15:00.358Z\"\n  },\n  \"description\": \"\"\n}"
+								},
+								{
+									"name": "Solicitação processada com sucesso, mas não está retornando nenhum conteúdo.\n",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Location",
+											"value": "aute proi",
+											"description": "URI correspondente a pesquisa corrente"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "See Other - Resposta à solicitação da consulta será redirecionada (pode ser encontrada em outro URI/localização), usando o método GET. Quando recebido em resposta a um POST (ou PUT / DELETE), o cliente deve presumir que o servidor recebeu os dados e deve ",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "See Other",
+									"code": 303,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Location",
+											"value": "aute proi",
+											"description": "URI correspondente a consulta do status do processamento assíncrono."
+										},
+										{
+											"key": "Location",
+											"value": "aute proi",
+											"description": "URI correspondente a consulta do elemento já processado assíncronamente."
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Parâmetros incorretos (os dados de entradas estão incorretos ou ausentes).",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Não autorizado. Verifique se os parâmetros de acesso estão válidos (como certificado, expiração do token, configuração da credencial e secret ou jwt). Se o problema persistir, entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Requisição de participante autenticado que viola alguma regra de autorização.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/AcessoNegado\",\n  \"title\": \"Acesso Negado\",\n  \"status\": 403,\n  \"detail\": \"Requisição de participante autenticado que viola alguma regra de autorização.\",\n  \"correlationId\": \"0756d096-c900-4d4b-a0b1-d9c13004f29d\",\n  \"violacoes\": [\n    {\n      \"razao\": \"incididunt qui quis\",\n      \"propriedade\": \"Ut ad culpa aute\",\n      \"valor\": \"ex fugiat do magna Duis\"\n    },\n    {\n      \"razao\": \"eiusmod\",\n      \"propriedade\": \"commodo nulla dolore i\",\n      \"valor\": \"id pariatur nulla\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Recurso solicitado não foi encontrado.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/NaoEncontrado\",\n  \"title\": \"Não Encontrado\",\n  \"status\": 404,\n  \"detail\": \"Entidade não encontrada.\",\n  \"correlationId\": \"0756d096-c900-4d4b-a0b1-d9c13004f29d\",\n  \"violacoes\": [\n    {\n      \"razao\": \"irure sit ullamco id r\",\n      \"propriedade\": \"ullamco eu laborum tempor\",\n      \"valor\": \"eiusmod eu Excepteur\"\n    },\n    {\n      \"razao\": \"cupidatat in exercitation tempor\",\n      \"propriedade\": \"deserunt Lorem nostrud\",\n      \"valor\": \"in laboris nisi dolore\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Método não permitido",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Erro semântico",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Solicitação requer pré requisito ou condição que não foi enviada",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Precondition Required",
+									"code": 428,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Erro Inesperado. Entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Não implementado. Entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Not Implemented",
+									"code": 501,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Serviço não está disponível no momento. Serviço solicitado pode estar em manutenção ou fora da janela de funcionamento.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/ServicoIndisponivel\",\n  \"title\": \"Serviço Indisponível\",\n  \"status\": 503,\n  \"detail\": \"Serviço não está disponível no momento. Serviço solicitado pode estar em manutenção ou fora da janela de funcionamento.\",\n  \"correlationId\": \"A cobrança em questão não foi encontrada para a location requisitada.\",\n  \"violacoes\": [\n    {\n      \"razao\": \"consequat amet\",\n      \"propriedade\": \"elit ip\",\n      \"valor\": \"in voluptate\"\n    },\n    {\n      \"razao\": \"ut e\",\n      \"propriedade\": \"sint qui dolor minim Duis\",\n      \"valor\": \"proident incididunt nisi\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Gateway Timeout. Entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Gateway Timeout",
+									"code": 504,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "delete/webhook/{chave}",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": {
+										"username": "<Basic Auth Username>",
+										"password": "<Basic Auth Password>"
+									}
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook/:chave",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook",
+										":chave"
+									],
+									"variable": [
+										{
+											"key": "chave",
+											"value": "aute proi",
+											"description": "(Required) Chave de endereçamento do recebedor"
+										}
+									]
+								},
+								"description": "Operação responsável por deletar webhook para aviso de recebimentos pix por chave"
+							},
+							"response": [
+								{
+									"name": "A execução foi bem-sucedida, o recurso foi removido corretamente de forma síncrona.\n",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "A execução foi bem-sucedida, o recurso será excluído de forma assíncrona.\nO retorno deste pedido deve ser um recurso de tarefas.\n",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Accepted",
+									"code": 202,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Location",
+											"value": "aute proi",
+											"description": "URI correspondente a consulta do status do processamento assíncrono."
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Requisição com formato inválido.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/CobOperacaoInvalida\",\n  \"title\": \"Cobrança inválida.\",\n  \"status\": 400,\n  \"detail\": \"A requisição que busca alterar ou criar uma cobrança para pagamento imediato não respeita o schema ou está semanticamente errada.\",\n  \"correlationId\": \"0756d096-c900-4d4b-a0b1-d9c13004f29d\",\n  \"violacoes\": [\n    {\n      \"razao\": \"O objeto cobv.devedor não respeita o schema.\",\n      \"propriedade\": \"cob.valor.original\",\n      \"valor\": \"tempor\"\n    },\n    {\n      \"razao\": \"O objeto cobv.devedor não respeita o schema.\",\n      \"propriedade\": \"cob.valor.original\",\n      \"valor\": \"sed deserunt dolore\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Não autorizado. Verifique se os parâmetros de acesso estão válidos (certificado, expiração do token, configuração da credencial, secret ou jwt). Se o problema persistir, entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Requisição de participante autenticado que viola alguma regra de autorização.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/AcessoNegado\",\n  \"title\": \"Acesso Negado\",\n  \"status\": 403,\n  \"detail\": \"Requisição de participante autenticado que viola alguma regra de autorização.\",\n  \"correlationId\": \"0756d096-c900-4d4b-a0b1-d9c13004f29d\",\n  \"violacoes\": [\n    {\n      \"razao\": \"incididunt qui quis\",\n      \"propriedade\": \"Ut ad culpa aute\",\n      \"valor\": \"ex fugiat do magna Duis\"\n    },\n    {\n      \"razao\": \"eiusmod\",\n      \"propriedade\": \"commodo nulla dolore i\",\n      \"valor\": \"id pariatur nulla\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Recurso solicitado não foi encontrado.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/NaoEncontrado\",\n  \"title\": \"Não Encontrado\",\n  \"status\": 404,\n  \"detail\": \"Entidade não encontrada.\",\n  \"correlationId\": \"0756d096-c900-4d4b-a0b1-d9c13004f29d\",\n  \"violacoes\": [\n    {\n      \"razao\": \"irure sit ullamco id r\",\n      \"propriedade\": \"ullamco eu laborum tempor\",\n      \"valor\": \"eiusmod eu Excepteur\"\n    },\n    {\n      \"razao\": \"cupidatat in exercitation tempor\",\n      \"propriedade\": \"deserunt Lorem nostrud\",\n      \"valor\": \"in laboris nisi dolore\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Método não permitido",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Method Not Allowed",
+									"code": 405,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Erro semântico",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Solicitação requer pré requisito ou condição que não foi enviada",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Precondition Required",
+									"code": 428,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Erro Inesperado. Entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Não implementado. Entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Not Implemented",
+									"code": 501,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Serviço não está disponível no momento. Serviço solicitado pode estar em manutenção ou fora da janela de funcionamento.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Service Unavailable",
+									"code": 503,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/ServicoIndisponivel\",\n  \"title\": \"Serviço Indisponível\",\n  \"status\": 503,\n  \"detail\": \"Serviço não está disponível no momento. Serviço solicitado pode estar em manutenção ou fora da janela de funcionamento.\",\n  \"correlationId\": \"A cobrança em questão não foi encontrada para a location requisitada.\",\n  \"violacoes\": [\n    {\n      \"razao\": \"consequat amet\",\n      \"propriedade\": \"elit ip\",\n      \"valor\": \"in voluptate\"\n    },\n    {\n      \"razao\": \"ut e\",\n      \"propriedade\": \"sint qui dolor minim Duis\",\n      \"valor\": \"proident incididunt nisi\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Gateway Timeout. Entre em contato com o suporte Itaú.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: basic",
+												"key": "Authorization",
+												"value": "Basic <credentials>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/webhook/:chave",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"webhook",
+												":chave"
+											],
+											"variable": [
+												{
+													"key": "chave",
+													"value": "aute proi",
+													"description": "(Required) Chave de endereçamento do recebedor"
+												}
+											]
+										}
+									},
+									"status": "Gateway Timeout",
+									"code": 504,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					],
+					"description": "### Informação disponivel no DevPortal em: Produtos/PIX/Recebimentos PIX / informações adicionais.\n\nLink: [https://devportal.itau.com.br/nossas-apis/itau-ep9-gtw-pix-recebimentos-ext-v2](https://devportal.itau.com.br/nossas-apis/itau-ep9-gtw-pix-recebimentos-ext-v2)\n\nAPI para cadastrar/atualizar o serviço de notificações via webhook dos QR Codes recebidos e das transferências Pix recebidas via chave Pix.  \nAs transferências Pix recebidas com inserção manual (agência e conta) não serão notificadas e as devoluções emitidas são opcionais, sendo necessário a solicitação de um outro cadastro no Itaú.\n\nAs notificações de recebimento serão enviadas na URL cadastrada acrescentando o sufixo \"/pix\". Sendo assim, no momento do cadastro, não é necessário enviar a URL com o sufixo \"/pix\".\n\nExemplos:\n\n- URL enviada: webhook_itau\n    \n- URL cadastrada: webhook_itau/pix\n    \n\n### \\[Webhook\\] Notificação de Recebimento PIX (POST)\n\n### \\[POST\\] {url cadastrada pelo cliente}\n\n**Segurança:**\n\nO Itaú irá realizar a chamada para a API de callback através de uma URL exposta na web, protegida por uma camada de autenticação mTLS (HTTPS).\n\nEm uma conexão mTLS, o servidor de Webhook do Itaú e a API de callback do parceiro trocam certificados entre si a partir de um CA que ambos confiam. Em troca de certificados serve para comprovar a identidade de um servidor ao outro.\n\nPara ativar o fluxo de autenticação via mTLS primeiramente é necessário baixar a CA (chave pública) do Itaú no seguinte link:\n\n[ca-cert.zip](https://devportal.itau.com.br/assets/ca_cert_952123c440.zip)\n\nApós o download, essa CA deverá ser importada no API Gateway, servidor proxy ou aplicação que irá receber a requisição de Webhook do Itaú.\n\n**API call-back**\n\nDeve ser desenvolvida pelo cliente API que será responsável por efetuar a recepção da notificação de pagamento instantâneo.\n\nO itaú envia as notificações de recebimentos imediatamente a cada pagamento (um a um). Já para as notificações de devolução emitida, o envio é opcional. Caso queria receber este tipo de notificação, é necessário solicitar o cadastro de um parâmetro ao Itaú. Em casos de devoluções parciais, não serão acumulados dentro do array devoluções passadas.\n\nVale ressaltar que o processo de devolução do Itaú é síncrono e no endpoint \\[PUT\\] /pix_recebimentos/v2/pix/{e2eid}/devolucao/{id} já é retornado o status final da devolução e, por isso, o envio de notificação de devolução pelo Webhook é opcional."
+				},
+				{
+					"name": "get/webhook",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"username": "<Basic Auth Username>",
+								"password": "<Basic Auth Password>"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+								"key": "x-correlationID",
+								"value": "aute proi"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://secure.api.itau/pix_recebimentos/v2/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+							"protocol": "https",
+							"host": [
+								"secure",
+								"api",
+								"itau"
+							],
+							"path": [
+								"pix_recebimentos",
+								"v2",
+								"webhook"
+							],
+							"query": [
+								{
+									"key": "inicio",
+									"value": "aute proi",
+									"description": "Data de inicio da pesquisa de webhooks, no formato de acordo com RFC3339"
+								},
+								{
+									"key": "fim",
+									"value": "aute proi",
+									"description": "Data fim da pesquisa de webhooks, no formato de acordo com RFC3339"
+								},
+								{
+									"key": "paginacao.paginaAtual",
+									"value": "16140691",
+									"description": "Numero da Página que deseja realizar o acesso, valor considerado por default 0"
+								},
+								{
+									"key": "paginacao.itensPorPagina",
+									"value": "16140691",
+									"description": "Quantidade de ocorrência retornadas por pagina, valor por default 100"
+								}
+							]
+						},
+						"description": "Operação responsável por resgatar webhooks de aviso de recebimentos pix para um parceiro"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Location",
+									"value": "aute proi",
+									"description": "URI correspondente a pesquisa corrente"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"value\": {\n    \"parametros\": {\n      \"inicio\": \"2020-04-01T00:00:00Z\",\n      \"fim\": \"2020-04-01T23:59:59Z\",\n      \"paginacao\": {\n        \"paginaAtual\": 0,\n        \"itensPorPagina\": 100,\n        \"quantidadeDePaginas\": 1,\n        \"quantidadeTotalDeItens\": 1\n      }\n    },\n    \"webhooks\": [\n      {\n        \"webhookUrl\": \"https://pix.example.com/api/webhook/\",\n        \"chave\": \"email@email.com\",\n        \"criacao\": \"2020-11-11T10:15:00.358Z\"\n      }\n    ]\n  },\n  \"description\": \"\"\n}"
+						},
+						{
+							"name": "Solicitação processada com sucesso, mas não está retornando nenhum conteúdo.\n",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Location",
+									"value": "aute proi",
+									"description": "URI correspondente a pesquisa corrente"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "See Other - Resposta à solicitação da consulta será redirecionada (pode ser encontrada em outro URI/localização), usando o método GET. Quando recebido em resposta a um POST (ou PUT / DELETE), o cliente deve presumir que o servidor recebeu os dados e deve ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "See Other",
+							"code": 303,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Location",
+									"value": "aute proi",
+									"description": "URI correspondente a consulta do status do processamento assíncrono."
+								},
+								{
+									"key": "Location",
+									"value": "aute proi",
+									"description": "URI correspondente a consulta do elemento já processado assíncronamente."
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Parâmetros incorretos (os dados de entradas estão incorretos ou ausentes).",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Não autorizado. Verifique se os parâmetros de acesso estão válidos (como certificado, expiração do token, configuração da credencial e secret ou jwt). Se o problema persistir, entre em contato com o suporte Itaú.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Requisição de participante autenticado que viola alguma regra de autorização.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/AcessoNegado\",\n  \"title\": \"Acesso Negado\",\n  \"status\": 403,\n  \"detail\": \"Requisição de participante autenticado que viola alguma regra de autorização.\",\n  \"correlationId\": \"0756d096-c900-4d4b-a0b1-d9c13004f29d\",\n  \"violacoes\": [\n    {\n      \"razao\": \"incididunt qui quis\",\n      \"propriedade\": \"Ut ad culpa aute\",\n      \"valor\": \"ex fugiat do magna Duis\"\n    },\n    {\n      \"razao\": \"eiusmod\",\n      \"propriedade\": \"commodo nulla dolore i\",\n      \"valor\": \"id pariatur nulla\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Recurso Inexistente (não encontrado)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Método não permitido",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Erro semântico",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Solicitação requer pré requisito ou condição que não foi enviada",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Precondition Required",
+							"code": 428,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Erro Inesperado. Entre em contato com o suporte Itaú.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Não implementado. Entre em contato com o suporte Itaú.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Not Implemented",
+							"code": 501,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Serviço não está disponível no momento. Serviço solicitado pode estar em manutenção ou fora da janela de funcionamento.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"https://pix.bcb.gov.br/api/v2/error/ServicoIndisponivel\",\n  \"title\": \"Serviço Indisponível\",\n  \"status\": 503,\n  \"detail\": \"Serviço não está disponível no momento. Serviço solicitado pode estar em manutenção ou fora da janela de funcionamento.\",\n  \"correlationId\": \"A cobrança em questão não foi encontrada para a location requisitada.\",\n  \"violacoes\": [\n    {\n      \"razao\": \"consequat amet\",\n      \"propriedade\": \"elit ip\",\n      \"valor\": \"in voluptate\"\n    },\n    {\n      \"razao\": \"ut e\",\n      \"propriedade\": \"sint qui dolor minim Duis\",\n      \"valor\": \"proident incididunt nisi\"\n    }\n  ]\n}"
+						},
+						{
+							"name": "Gateway Timeout. Entre em contato com o suporte Itaú.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									},
+									{
+										"description": "Identificador de correlação que serve como um agrupar dentro da estrutura de audit trail",
+										"key": "x-correlationID",
+										"value": "aute proi"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/webhook?inicio=aute proi&fim=aute proi&paginacao.paginaAtual=16140691&paginacao.itensPorPagina=16140691",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"webhook"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "aute proi"
+										},
+										{
+											"key": "fim",
+											"value": "aute proi"
+										},
+										{
+											"key": "paginacao.paginaAtual",
+											"value": "16140691"
+										},
+										{
+											"key": "paginacao.itensPorPagina",
+											"value": "16140691"
+										}
+									]
+								}
+							},
+							"status": "Gateway Timeout",
+							"code": 504,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
